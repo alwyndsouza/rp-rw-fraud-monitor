@@ -113,8 +113,8 @@ For deeper system design, see:
 ### Bring up stack
 
 ```bash
-git clone https://github.com/alwyndsouza/fraud-detection-streaming
-cd fraud-detection-streaming
+git clone https://github.com/alwyndsouza/rp-dbt-rw-fraud-monitor
+cd rp-dbt-rw-fraud-monitor
 make up
 ```
 
