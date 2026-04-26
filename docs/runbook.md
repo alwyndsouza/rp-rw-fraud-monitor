@@ -3,8 +3,8 @@
 ## Starting the Pipeline
 
 ```bash
-git clone https://github.com/alwyndsouza/fraud-detection-streaming
-cd fraud-detection-streaming
+git clone https://github.com/alwyndsouza/rp-rw-fraud-monitor
+cd rp-rw-fraud-monitor
 make up
 ```
 
