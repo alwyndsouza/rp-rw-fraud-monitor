@@ -7,7 +7,7 @@
 export
 
 COMPOSE := docker compose
-PSQL := docker run --rm -i --network fraud-detection-streaming_fraud-net postgres:15-alpine psql -h risingwave -p 4566 -U root -d dev
+PSQL := docker run --rm -i --network rp-rw-fraud-monitor_fraud-net postgres:15-alpine psql -h risingwave -p 4566 -U root -d dev
 
 help: ## Show this help
 	@echo ""
@@ -136,7 +136,7 @@ lint: ## Check Python and SQL files for issues
 	@uv run sqlfluff lint sql/
 
 ci: ## Run local CI-equivalent checks
-	ruff check producers
-	pytest -q producers/tests
+	uv run ruff check producers
+	cd producers && uv run --extra dev pytest -q tests
 	python scripts/ci_sql_checks.py
 	uv run sqlfluff lint sql/

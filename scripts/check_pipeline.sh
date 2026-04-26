@@ -19,7 +19,7 @@ ok()   { echo -e "  ${GREEN}✓${NC} $1"; PASS=$((PASS+1)); }
 fail() { echo -e "  ${RED}✗${NC} $1"; FAIL=$((FAIL+1)); }
 info() { echo -e "  ${YELLOW}→${NC} $1"; }
 
-NETWORK="fraud-detection-streaming_fraud-net"
+NETWORK="rp-rw-fraud-monitor_fraud-net"
 PSQL() {
     docker run --rm --network "$NETWORK" -e PGPASSWORD="" postgres:15-alpine \
         psql -h risingwave -p 4566 -U root -d dev -t -A -c "$1" 2>/dev/null || echo ""
